@@ -1,8 +1,8 @@
 {
-  "name": "su-sws/stanford_starter",
-  "description": "Stanford Starter Sub Theme.",
+  "name": "su-sws/taiwan_hub_subtheme",
+  "description": "Taiwan Hub Subtheme.",
   "type": "drupal-custom-theme",
-  "homepage": "https://github.com/SU-SWS/stanford_starter",
+  "homepage": "https://github.com/SU-SWS/taiwan_hub_subtheme",
   "authors": [],
   "license": "GPL-2.0-or-later",
   "minimum-stability": "dev"
