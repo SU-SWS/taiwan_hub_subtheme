@@ -5,3 +5,15 @@
 
 // define colors here in the format of:
 //$abbreviation-color-pink: #ff0099; // like $saa-color-pink
+
+// colors on this theme
+$thub-color-ochre: #A89026;
+$thub-color-ochre-light: #CFB854;
+$thub-color-ochre-dark: #85721E;
+$thub-color-black: #1E010F;
+$thub-color-digital-red: #FF2F2F;
+
+// gradients
+$thub-gradient-teal-to-ochre: linear-gradient(124deg, $su-color-lagunita 0%, $thub-color-ochre-dark 100%);
+$thub-gradient-teal-to-ochre-to-red: linear-gradient(89deg, $su-color-lagunita 0.15%, $thub-color-ochre-dark 47.37%, #C4000B 96.43%);
+$thub-gradient-red: linear-gradient(108deg, #7E0008 0%, #B1040E 36.89%, #620029 66.88%);

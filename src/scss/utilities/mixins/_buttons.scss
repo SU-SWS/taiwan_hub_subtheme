@@ -14,3 +14,62 @@
   // Include the correct icon color mixin inside your mixins here
   //@include example--black-icons
 //}
+
+@mixin thub-button--gradient {
+  // background-color: transparent;
+  background-color: $su-color-white;
+  color: $su-color-black;
+  display: inline-block;
+  position: relative;
+  z-index: 0;
+  border-radius: 6px;
+
+  &::before {
+    content: "";
+    background: $thub-gradient-teal-to-ochre-to-red;
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    padding: 2px;
+    border-radius: 6px;
+    // background: linear-gradient(270deg, #C4000B 33%, $thub-color-ochre-dark 66%, $su-color-lagunita 100%);
+    // background: linear-gradient(89deg, #007C92 0.15%, $thub-color-ochre-dark 47.37%, #C4000B 96.43%);
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: $thub-gradient-teal-to-ochre-to-red;
+    background-color: $thub-color-ochre-dark;
+    border-radius: 6px;
+    color: $su-color-white;
+    transition: background-color .5s ease;
+  }
+}
+
+@mixin thub-button--secondary {
+  @include padding(1.2rem 2rem 1.5rem);
+
+  color: $su-color-black;
+  border-radius: 6px;
+  font-weight: 600;
+  background-color: $thub-color-ochre-light;
+  box-shadow: inset 0 0 0 2px $thub-color-ochre-light;
+  // padding: 1.2rem 2rem 1.5rem;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $su-color-white;
+    box-shadow: inset 0 0 0 2px $thub-color-ochre-light;
+    text-decoration: none;
+  }
+}
