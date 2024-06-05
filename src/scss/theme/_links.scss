@@ -27,6 +27,11 @@
 .su-link,
 .su-link--action,
 .su-link--internal,
+.su-wysiwyg-text h2 a,
+.su-wysiwyg-text h3 a,
+.su-wysiwyg-text h4 a,
+.su-wysiwyg-text h5 a,
+.su-local-footer__action-links a,
 a {
   color: $su-color-lagunita;
 
@@ -68,6 +73,20 @@ a {
 
       svg {
         fill: $su-color-black;
+      }
+    }
+  }
+}
+
+// Override
+.su-wysiwyg-text {
+  h2 a,
+  h3 a,
+  h4 a,
+  h5 a {
+    &.su-link--external {
+      &::after {
+        background-color: $su-color-lagunita;
       }
     }
   }
