@@ -233,24 +233,6 @@
         </ul>
       </nav>
       {% endif %}
-      {#
-        Secondary Links - Right or bottom list.
-      #}
-      {% if secondary_links is not empty%}
-      <nav aria-label="footer secondary nav">
-        {% if secondary_links_header is not empty %}
-        <h2 class="su-local-footer__list-heading">{{ secondary_links_header|default("Secondary Links") }}</h2>
-        {% endif %}
-        <ul class="su-local-footer__secondary-links">
-          {# Stylized links. See local-footer.json for structure for macro. #}
-          {% if secondary_links is iterable %}
-            {{ list_macro.link_list(secondary_links) }}
-          {% else %}
-            {{ secondary_links }}
-          {% endif %}
-        </ul>
-      </nav>
-      {% endif %}
       {% endblock %}
       {# If you want to provide all of our own markup use the cell2 var. #}
       {{ cell2 }}
