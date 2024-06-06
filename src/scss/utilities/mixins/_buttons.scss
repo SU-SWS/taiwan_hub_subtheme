@@ -13,7 +13,7 @@
 
   &::before {
     content: "";
-    background: $thub-gradient-teal-to-ochre-to-red;
+    background: $thub-gradient-lagunita-to-ochre-to-red;
     position: absolute;
     z-index: -1;
     inset: 0;
@@ -32,7 +32,7 @@
   &:hover,
   &:focus,
   &:active {
-    background: $thub-gradient-teal-to-ochre-to-red;
+    background: $thub-gradient-lagunita-to-ochre-to-red;
     background-color: $thub-color-ochre-dark;
     border-radius: 6px;
     color: $su-color-white;

@@ -6,7 +6,7 @@
   .thub-gradient-divider {
     @include centered-column;
 
-    background: $thub-gradient-teal-to-ochre-to-red;
+    background: $thub-gradient-lagunita-to-ochre-to-red;
     height: 3px;
     border-radius: 1.5px;
   }
@@ -95,7 +95,7 @@
       &:not(:first-child) {
         &::before {
           content: "";
-          background: $thub-gradient-teal-to-ochre-to-red;
+          background: $thub-gradient-lagunita-to-ochre-to-red;
           display: block;
           height: 3px;
           border-radius: 1.5px;

@@ -90,13 +90,7 @@ allpages:
   css:
     theme:
       dist/css/main.css: { }
-#      dist/css/print.css: { media: print }
-#    base:
-#      dist/css/base.css: { weight: 100 }
-#    layout:
-#      dist/css/layout.css: {}
-#    component:
-#      dist/css/components.css: {}
-#    state:
-#      dist/css/state.css: {}
-
+  js:
+    src/js/taiwan_hub_subtheme.behaviors.js: { }
+  dependencies:
+    - core/jquery
