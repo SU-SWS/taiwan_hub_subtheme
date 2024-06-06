@@ -1,245 +1,88 @@
 @charset "UTF-8";
 
-// All pages
-// .su-brand-bar {
-//   display: none;
-// }
-
 // This Hero banner is only for the front page of site on Taiwan Hub subtheme
-// .front {
 
-  // Remove the red brand bar
-  // .su-brand-bar {
-  //   display: none;
-  // }
-
-  // Moving the site's global message alert to the top when
-  .ds-entity--stanford-global-message {
-    .su-alert {
-      position: relative;
-      z-index: 15;
-    }
+// Moving the site's global message alert to the top when
+.ds-entity--stanford-global-message {
+  .su-alert {
+    position: relative;
+    z-index: 15;
   }
+}
 
-  //skip nav look
-  .su-skipnav {
-    z-index: 16;
-    background-color: $su-color-white;
-  }
+// skip nav look
+.su-skipnav {
+  z-index: 16;
+  background-color: $su-color-white;
+}
 
-  //search
-  // .su-masthead {
-  //   .su-site-search__input {
-  //     background: transparent;
-  //     border: 1px solid $su-color-white;
-  //     color: $su-color-white;
-  //     font-family: $su-font-sans;
-
-  //     &::placeholder {
-  //       color: $su-color-white;
-  //     }
-  //   }
-  // }
-
-  // Move the image up more to compensate for the admin interface.
-  .role--authenticated {
-
-  //drupal messages to the top
-    .page-content {
-      > .su-alert {
-        position: relative;
-        top: -290px;
-        z-index: 15;
+// Move the image up more to compensate for the admin interface.
+.toolbar-horizontal {
+  .su-page-banner {
+    .taiwan-hub-hero-banner--has-image,
+    .ds-entity--stanford-page-title-banner {
+      @include grid-media-min('md') {
+        margin-top: -188px;
       }
-    }
 
-    .su-page-banner {
-      .taiwan-hub-hero-banner--has-image,
-      .ds-entity--stanford-page-title-banner {
-        margin-top: -737px;
-        // margin-top: -10px;
-
-        @include grid-media-min('md') {
-          margin-top: -188px;
-        }
-
-        @include grid-media-min('lg') {
-          margin-top: -261px;
-        }
-
-        // @media only screen and (min-width: 992px) and (max-width: 1457px) {
-        //   margin-top: -537px;
-        // }
-
-        // @include grid-media('xl') {
-        //   margin-top: -408px;
-        // }
-      }
-    }
-
-    .block--local-tasks {
-
-      ul {
-        flex-wrap: wrap;
+      @include grid-media-min('lg') {
+        margin-top: -261px;
       }
     }
   }
+}
 
+.block--local-tasks {
+  ul {
+    flex-wrap: wrap;
+  }
+}
 
-  .node-stanford-page-su-page-banner > div {
+.node-stanford-page-su-page-banner > div {
+  header {
+    background: transparent;
+    box-shadow: none;
+  }
 
-    header {
-      background: transparent;
-      box-shadow: none;
-    }
-
-    // .su-hero__media {
-    //   // Move the card below the image
-    //   @include grid-media-max('md') {
-    //     position: relative;
+  // LG and down only
+  // For sizes less than large.
+  .taiwan-hub-hero-banner--has-image,
+  .ds-entity--stanford-page-title-banner {
+    // // overridding
+    // .su-card {
+    //   .su-card__contents {
+    //     font-family: $su-font-sans;
     //   }
     // }
 
-    // LG and down only
-    // For sizes less than large.
-    .taiwan-hub-hero-banner--has-image,
-    .ds-entity--stanford-page-title-banner {
+    section.su-card__contents {
+      .su-card__superhead {
+        @include slab;
 
-      // // overridding
-      // .su-card {
-      //   .su-card__contents {
-      //     font-family: $su-font-sans;
-      //   }
-      // }
-
-      section.su-card__contents {
-
-        // h2 {
-        //   // @include slab;
-        //   // @include modular-typography(5);
-
-        //   // @include grid-media-max('md') {
-        //   //   @include modular-typography(3);
-        //   // }
-        // }
-
-        .su-card__superhead {
-          @include slab;
-
-          font-size: 1.5rem;
-
-          @include grid-media-min('md') {
-            font-size: 1.8rem;
-          }
-        }
-
-        h2 {
-          font-size: 4.7rem;
-
-          @include grid-media-min('md') {
-            font-size: 6.4rem;
-          }
-
-        }
-
-        h2,
-        h3,
-        h4,
-        h5,
-        .su-font-splash {
-          @include slab;
-          // font-size: 4.7rem;
-
-          font-weight: $su-font-regular;
-          // font-family: $su-font-sans;
-          // padding-bottom: 10px;
-          // text-decoration: none;
-          color: $su-color-white;
-
-          // @include grid-media-min('md') {
-          //   font-size: 6.4rem;
-          // }
-
-          a {
-            color: $thub-color-ochre-light;
-            font-weight: $su-font-regular;
-  
-            &::after {
-              background-color: $thub-color-ochre-light;
-            }
-  
-            &:hover,
-            &:focus,
-            &:active {
-              color: $su-color-white;
-              text-decoration: underline;
-  
-              &::after {
-                background-color: $su-color-white;
-              }
-            }
-          }
-
-          // > a {
-          //   // @include vpue-gradient--link;
-          //   font-family: $su-font-sans;
-
-          //   @include grid-media-max('md') {
-          //     color: $su-color-black;
-          //     text-align: left;
-          //   }
-
-          //   &::after {
-          //     @include grid-media-max('md') {
-          //       background-color: $su-color-black;
-          //     }
-          //     height: 0.4em;
-          //     width: 0.4em;
-          //   }
-
-
-          //   &:hover,
-          //   &:focus,
-          //   &:visited {
-          //     // @include vpue-gradient--link-hover;
-
-          //     color: $su-color-black;
-          //     text-decoration: none;
-
-          //     // Color change for on the image
-          //     @include grid-media-min('md') {
-          //       color: $su-color-white;
-          //     }
-
-          //     // Color change for below the image
-          //     // @include grid-media-max('md') {
-          //     //   color: $su-color-black;
-          //     // }
-          //   }
-          // }
-        }
-
-        // > a {
-        //   background-position: 0 70%;
-
-        //   &:hover,
-        //   &:focus,
-        //   &:visited {
-        //     background-position: 0 70%;
-        //   }
-        // }
-      }
-
-      p {
-        // @include intro-text;
-        // @include modular-typography(2);
-        color: $su-color-white;
-        font-size: 2.5rem;
-        font-weight: $su-font-regular;
+        font-size: 1.5rem;
 
         @include grid-media-min('md') {
-          font-size: 3rem;
+          font-size: 1.8rem;
         }
+      }
+
+      h2 {
+        font-size: 4.7rem;
+
+        @include grid-media-min('md') {
+          font-size: 6.4rem;
+        }
+      }
+
+      h2,
+      h3,
+      h4,
+      h5,
+      .su-font-splash {
+        @include slab;
+
+        font-weight: $su-font-regular;
+        color: $su-color-white;
 
         a {
           color: $thub-color-ochre-light;
@@ -258,285 +101,200 @@
             &::after {
               background-color: $su-color-white;
             }
+          }
+        }
+      }
+    }
 
-            &.mailto svg {
-              fill: $su-color-white;
-            }
+    p {
+      color: $su-color-white;
+      font-size: 2.5rem;
+      font-weight: $su-font-regular;
+
+      @include grid-media-min('md') {
+        font-size: 3rem;
+      }
+
+      a {
+        color: $thub-color-ochre-light;
+        font-weight: $su-font-regular;
+        text-decoration: underline;
+
+        &::after {
+          background-color: $thub-color-ochre-light;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+          color: $su-color-white;
+          text-decoration: underline;
+
+          &::after {
+            background-color: $su-color-white;
           }
 
           &.mailto svg {
-            fill: $thub-color-ochre-light;
+            fill: $su-color-white;
           }
-
         }
-      }
 
-      // a {
-      //   color: $su-color-white;
-      //   font-weight: $su-font-bold;
-      //   text-decoration: none;
-
-      //   // &:hover,
-      //   // &:focus,
-      //   // &:active {
-      //   //   @include vpue-gradient--link-hover;
-      //   // }
-
-      //   // Color change for below the image
-      //   // @include grid-media-max('md') {
-      //   //   color: $su-color-black;
-      //   // }
-      // }
-
-      .su-hero__card {
-        background: transparent;
-        border: 0;
-        box-shadow: none;
-        color: $su-color-white;
-        // max-width: 94vw;
-        text-align: center;
-
-        // // Color change for below the image
-        // @include grid-media-max('lg') {
-        //   color: $su-color-black;
-        //   font-size: .8em;
-        //   text-align: left;
-        // }
-      }
-
-      span {
-        @include type-d;
-
-        color: $su-color-white;
-        font-family: $su-font-sans;
-        text-transform: uppercase;
-
-        // Color change for below the image
-        // @include grid-media-max('md') {
-        //   color: $su-color-cardinal-red;
-        // }
+        &.mailto svg {
+          fill: $thub-color-ochre-light;
+        }
       }
     }
 
-    // LG and up only
-    // @include grid-media-min('lg') {
+    .su-hero__card {
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+      color: $su-color-white;
+      text-align: center;
+    }
 
-      .taiwan-hub-hero-banner--has-image,
-      .ds-entity--stanford-page-title-banner {
-        position: relative;
-        margin-top: -418px;
-        width: 100vw;
-        z-index: 1; //To allow access to click link.
-        clip-path: ellipse(100% 60% at 50% 40%);
+    span {
+      @include type-d;
 
-        @include grid-media-min('sm') {
-          margin-top: -376px;
-        }
+      color: $su-color-white;
+      font-family: $su-font-sans;
+      text-transform: uppercase;
+    }
+  }
 
-        @include grid-media-min('md') {
-          margin-top: -138px;
-        }
+  // LG and up only
+  // @include grid-media-min('lg') {
+  .taiwan-hub-hero-banner--has-image,
+  .ds-entity--stanford-page-title-banner {
+    position: relative;
+    margin-top: -418px;
+    width: 100vw;
+    z-index: 1; // To allow access to click link.
+    clip-path: ellipse(100% 60% at 50% 40%);
 
-        @include grid-media-min('md') {
-          margin-top: -211px;
-        }
+    @include grid-media-min('sm') {
+      margin-top: -376px;
+    }
 
-        @include grid-media-min('2xl') {
-          margin-top: -152px;
-        }
-      }
+    @include grid-media-min('md') {
+      margin-top: -138px;
+    }
 
-      .su-hero {
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        justify-content: flex-end;
-
-        // Where we set the height of the hero block image
-        min-height: 800px;
-
-        // Fix for accessbility per ODA request. Images are often turned off.
-        background-color: $su-color-black;
-        z-index: -1;
-
-        .su-hero__media {
-          position: absolute;
-
-          img,
-          picture {
-            object-position: bottom;
-          }
-
-          // Fix for accessbility per ODA request. Images are often turned off. Without the min-height everything
-          // collaspes up and is invisible.
-          .image,
-          .media,
-          & > article,
-          & > div {
-            min-height: 350px;
-          }
-        }
-      }
-
-      .su-hero__media {
-        // @include vpue--image-top-gradient-new;
-        background: transparent;
-        // background: linear-gradient(to bottom, black, transparent 50%);
-
-        picture {
-          position: relative;
-          z-index: -1;
-          display: block;
-        }
-      }
-
-      section.su-card__contents {
-        margin: 0 auto;
-        max-width: 654px;
-        margin-top: 25rem;
-
-        &::before {
-          @include responsive-spacing('padding-bottom', 2);
-
-          display: block;
-          content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='216' height='52' viewBox='0 0 466 109' fill='none'%3E%3Cpath d='M466 78.213C271.912 52.3377 169.203 56.0196 0 104.261V78.213C188.098 37.7464 289.351 42.8942 466 78.213Z' fill='%2330B0BA'/%3E%3Cpath d='M466 109C289.863 69.5361 187.471 70.6364 0 109C171.55 60.7227 273.013 55.5636 466 82.7941V109Z' fill='%23CFB854'/%3E%3Cpath d='M120.168 0C74.0287 42.229 47.8856 60.8766 0 71.0868C44.8874 67.9809 71.4901 52.114 120.168 11.7257C212.512 56.6132 262.574 54.8511 349.325 11.7257C406.846 56.6067 431.512 68.005 466 71.0868C419.232 60.1845 393.887 41.8166 349.325 0C261.684 46.5939 211.534 47.2195 120.168 0Z' fill='url(%23paint0_linear_4915_8981)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear_4915_8981' x1='0' y1='0' x2='84.6459' y2='242.251' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%2330B0BA'/%3E%3Cstop offset='1' stop-color='%23CFB853'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E");
-          
-          @include grid-media-min('sm') {
-            content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='336' height='79' viewBox='0 0 466 109' fill='none'%3E%3Cpath d='M466 78.213C271.912 52.3377 169.203 56.0196 0 104.261V78.213C188.098 37.7464 289.351 42.8942 466 78.213Z' fill='%2330B0BA'/%3E%3Cpath d='M466 109C289.863 69.5361 187.471 70.6364 0 109C171.55 60.7227 273.013 55.5636 466 82.7941V109Z' fill='%23CFB854'/%3E%3Cpath d='M120.168 0C74.0287 42.229 47.8856 60.8766 0 71.0868C44.8874 67.9809 71.4901 52.114 120.168 11.7257C212.512 56.6132 262.574 54.8511 349.325 11.7257C406.846 56.6067 431.512 68.005 466 71.0868C419.232 60.1845 393.887 41.8166 349.325 0C261.684 46.5939 211.534 47.2195 120.168 0Z' fill='url(%23paint0_linear_4915_8981)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear_4915_8981' x1='0' y1='0' x2='84.6459' y2='242.251' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%2330B0BA'/%3E%3Cstop offset='1' stop-color='%23CFB853'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E");
-          }
-
-          @include grid-media-min('md') {
-            content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='466' height='109' viewBox='0 0 466 109' fill='none'%3E%3Cpath d='M466 78.213C271.912 52.3377 169.203 56.0196 0 104.261V78.213C188.098 37.7464 289.351 42.8942 466 78.213Z' fill='%2330B0BA'/%3E%3Cpath d='M466 109C289.863 69.5361 187.471 70.6364 0 109C171.55 60.7227 273.013 55.5636 466 82.7941V109Z' fill='%23CFB854'/%3E%3Cpath d='M120.168 0C74.0287 42.229 47.8856 60.8766 0 71.0868C44.8874 67.9809 71.4901 52.114 120.168 11.7257C212.512 56.6132 262.574 54.8511 349.325 11.7257C406.846 56.6067 431.512 68.005 466 71.0868C419.232 60.1845 393.887 41.8166 349.325 0C261.684 46.5939 211.534 47.2195 120.168 0Z' fill='url(%23paint0_linear_4915_8981)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear_4915_8981' x1='0' y1='0' x2='84.6459' y2='242.251' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%2330B0BA'/%3E%3Cstop offset='1' stop-color='%23CFB853'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E");
-          }
-        }
-
-        // > h2,
-        // > h3,
-        // > h4,
-        // > .su-font-splash {
-        //   @include slab;
-
-        //   > a {
-        //     // @include vpue-gradient--link;
-
-        //     &::after {
-        //       background-color: $su-color-white;
-        //       height: 0.4em;
-        //       width: 0.4em;
-        //     }
-
-
-        //     &:hover,
-        //     &:focus,
-        //     &:visited {
-        //       // @include vpue-gradient--link-hover;
-
-        //       color: $su-color-black;
-        //       text-decoration: none;
-        //     }
-        //   }
-        // }
-
-        // > a {
-        //   background-position: 0 70%;
-
-        //   &:hover,
-        //   &:focus,
-        //   &:visited {
-        //     background-position: 0 70%;
-        //   }
-        // }
-      }
-
-      // p {
-      //   // @include intro-text;
-      //   // @include modular-typography(2);
-
-      //   color: $su-color-white;
-      //   font-size: 2.5rem;
-      //   font-weight: $su-font-bold;
-      //   text-decoration: none;
-
-      //   @include grid-media-min('md') {
-      //     font-size: 3rem;
-      //   }
-      // }
-
-      a {
-        color: $su-color-white;
-        font-weight: $su-font-bold;
-        text-decoration: none;
-
-        // &:hover,
-        // &:focus,
-        // &:active {
-        //   @include vpue-gradient--link-hover;
-        // }
-      }
-
-      .su-hero__card {
-        // background: transparent;
-        // border: 0;
-        // box-shadow: none;
-        // color: $su-color-white;
-        // max-width: 94vw;
-        // text-align: center;
-        bottom: unset;
-        left: auto;
-        max-width: unset;
-      }
-
-      span {
-        color: $su-color-white;
-        font-family: $su-font-sans;
-        text-transform: uppercase;
-      }
-
-      // .su-card__button {
-      //   a {
-      //     @include thub-button--gradient;
-      //     @include padding(1.3rem 2.8rem 1.5rem);
-          
-      //     font-size: 2.5rem;
-
-      //     @include grid-media('md') {
-      //       @include padding(1.5rem 3rem 1.8rem);
-      //       font-size: 2.8rem;
-      //     }
-
-      //     @include grid-media('2xl') {
-      //       font-size: 3rem;
-      //     }
-      //   }
-      // }
-    // }
-
-    @include grid-media-min('xl') {
-
-      .taiwan-hub-hero-banner--has-image,
-      .ds-entity--stanford-page-title-banner {
-        margin-top: -350px;
-      }
+    @include grid-media-min('md') {
+      margin-top: -211px;
     }
 
     @include grid-media-min('2xl') {
+      margin-top: -152px;
+    }
+  }
 
-      .taiwan-hub-hero-banner--has-image,
-      .ds-entity--stanford-page-title-banner {
-        margin-top: -290px;
+  .su-hero {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: flex-end;
+
+    // Where we set the height of the hero block image
+    min-height: 800px;
+
+    // Fix for accessibility per ODA request. Images are often turned off.
+    background-color: $su-color-black;
+    z-index: -1;
+
+    .su-hero__media {
+      position: absolute;
+
+      img,
+      picture {
+        object-position: bottom;
+      }
+
+      // Fix for accessibility per ODA request. Images are often turned off. Without the min-height everything
+      // collapses up and is invisible.
+      .image,
+      .media,
+      & > article,
+      & > div {
+        min-height: 350px;
       }
     }
   }
 
-// }
+  .su-hero__media {
+    background: transparent;
 
-// Page Title Banner
-.su-page-banner {
-  .ptype-stanford-banner {
-    section.su-card__contents {
-      &::before {
-        content: none;
+    picture {
+      position: relative;
+      z-index: -1;
+      display: block;
+    }
+  }
+
+  section.su-card__contents {
+    @include responsive-spacing('padding-bottom', 6);
+
+    margin: 0 auto;
+    max-width: 654px;
+    margin-top: 25rem;
+    padding-bottom: 8rem;
+
+    &::before {
+      @include responsive-spacing('padding-bottom', 2);
+
+      display: block;
+      content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='216' height='52' viewBox='0 0 466 109' fill='none'%3E%3Cpath d='M466 78.213C271.912 52.3377 169.203 56.0196 0 104.261V78.213C188.098 37.7464 289.351 42.8942 466 78.213Z' fill='%2330B0BA'/%3E%3Cpath d='M466 109C289.863 69.5361 187.471 70.6364 0 109C171.55 60.7227 273.013 55.5636 466 82.7941V109Z' fill='%23CFB854'/%3E%3Cpath d='M120.168 0C74.0287 42.229 47.8856 60.8766 0 71.0868C44.8874 67.9809 71.4901 52.114 120.168 11.7257C212.512 56.6132 262.574 54.8511 349.325 11.7257C406.846 56.6067 431.512 68.005 466 71.0868C419.232 60.1845 393.887 41.8166 349.325 0C261.684 46.5939 211.534 47.2195 120.168 0Z' fill='url(%23paint0_linear_4915_8981)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear_4915_8981' x1='0' y1='0' x2='84.6459' y2='242.251' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%2330B0BA'/%3E%3Cstop offset='1' stop-color='%23CFB853'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E");
+
+      @include grid-media-min('sm') {
+        content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='336' height='79' viewBox='0 0 466 109' fill='none'%3E%3Cpath d='M466 78.213C271.912 52.3377 169.203 56.0196 0 104.261V78.213C188.098 37.7464 289.351 42.8942 466 78.213Z' fill='%2330B0BA'/%3E%3Cpath d='M466 109C289.863 69.5361 187.471 70.6364 0 109C171.55 60.7227 273.013 55.5636 466 82.7941V109Z' fill='%23CFB854'/%3E%3Cpath d='M120.168 0C74.0287 42.229 47.8856 60.8766 0 71.0868C44.8874 67.9809 71.4901 52.114 120.168 11.7257C212.512 56.6132 262.574 54.8511 349.325 11.7257C406.846 56.6067 431.512 68.005 466 71.0868C419.232 60.1845 393.887 41.8166 349.325 0C261.684 46.5939 211.534 47.2195 120.168 0Z' fill='url(%23paint0_linear_4915_8981)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear_4915_8981' x1='0' y1='0' x2='84.6459' y2='242.251' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%2330B0BA'/%3E%3Cstop offset='1' stop-color='%23CFB853'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E");
       }
+
+      @include grid-media-min('md') {
+        content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='466' height='109' viewBox='0 0 466 109' fill='none'%3E%3Cpath d='M466 78.213C271.912 52.3377 169.203 56.0196 0 104.261V78.213C188.098 37.7464 289.351 42.8942 466 78.213Z' fill='%2330B0BA'/%3E%3Cpath d='M466 109C289.863 69.5361 187.471 70.6364 0 109C171.55 60.7227 273.013 55.5636 466 82.7941V109Z' fill='%23CFB854'/%3E%3Cpath d='M120.168 0C74.0287 42.229 47.8856 60.8766 0 71.0868C44.8874 67.9809 71.4901 52.114 120.168 11.7257C212.512 56.6132 262.574 54.8511 349.325 11.7257C406.846 56.6067 431.512 68.005 466 71.0868C419.232 60.1845 393.887 41.8166 349.325 0C261.684 46.5939 211.534 47.2195 120.168 0Z' fill='url(%23paint0_linear_4915_8981)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear_4915_8981' x1='0' y1='0' x2='84.6459' y2='242.251' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%2330B0BA'/%3E%3Cstop offset='1' stop-color='%23CFB853'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E");
+      }
+    }
+  }
+
+  a {
+    color: $su-color-white;
+    font-weight: $su-font-bold;
+    text-decoration: none;
+  }
+
+  .su-hero__card {
+    bottom: unset;
+    left: auto;
+    max-width: unset;
+  }
+
+  span {
+    color: $su-color-white;
+    font-family: $su-font-sans;
+    text-transform: uppercase;
+  }
+
+  @include grid-media-min('xl') {
+    .taiwan-hub-hero-banner--has-image,
+    .ds-entity--stanford-page-title-banner {
+      margin-top: -350px;
+    }
+  }
+
+  @include grid-media-min('2xl') {
+    .taiwan-hub-hero-banner--has-image,
+    .ds-entity--stanford-page-title-banner {
+      margin-top: -290px;
     }
   }
 }
+
+// Page Title Banner
+// .su-page-banner {
+//   .ptype-stanford-banner {
+//     section.su-card__contents {
+//       &::before {
+//         content: none;
+//       }
+//     }
+//   }
+// }
