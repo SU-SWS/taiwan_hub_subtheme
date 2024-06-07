@@ -9,191 +9,26 @@
 }
 
 main,
-footer {
+footer {  
   .su-button,
-  .su-button.su-link,
-  .su-button--big,
-  .su-button--big.su-link,
+  .su-button.su-button.su-link,
   .stanford-news-vertical-teaser-term .more-link a,
   .node.event .more-link a,
+  .node.event .more-link a,
   .system-main-block form .su-button:hover {
-    @include thub-button--gradient;
+    @include thub-button;
+  }
+
+  .su-button--big,
+  .su-button--big.su-link {
+    @include thub-button--big;
   }
 
   .su-button--secondary,
   .su-button--secondary.su-link {
     @include thub-button--secondary;
-
-    &:not(.su-link--external) {
-      &::after {
-        content: "";
-        background: $thub-right-arrow-black-sm;
-        height: 18px;
-        width: 23px;
-        top: 4px;
-        display: inline-block;
-        position: relative;
-        
-        @include grid-media-min('md') {
-          top: 0;
-          background: $thub-right-arrow-black-md;
-        }
-      }
-    }
-
-    &.mailto {
-      &::after {
-        content: none;
-      }
-    }
   }
 
-  // Button icons
-  .su-button,
-  .su-button--big {
-    &:hover,
-    &:focus,
-    &:active {
-      &.mailto {
-        svg {
-          fill: $su-color-white;
-        }
-      }
-    }
-
-    &.mailto {
-      svg {
-        margin-left: 1rem;
-
-        @include grid-media-min('md') {
-          margin-left: 2rem;
-        }
-      }
-    }
-  }
-
-  .su-button,
-  .su-button.su-button.su-link,
-  .stanford-news-vertical-teaser-term .more-link a,
-  .node.event .more-link a {
-    padding: 1rem 3rem 1.2rem 3rem;
-  
-    @include grid-media-min('md') {
-      padding: 1.2rem 2rem 1.5rem 2rem;
-    }
-
-    &::after {
-      margin-left: 1rem;
-
-      @include grid-media-min('md') {
-        margin-left: 2rem;
-      }
-    }
-
-    &.su-link--external {
-      &::after {
-        height: 12px;
-        width: 12px;
-      }
-    }
-    
-    &:not(.su-link--external) {
-      &::after {
-        content: "";
-        background: $thub-right-arrow-black-sm;
-        height: 18px;
-        width: 23px;
-        top: 4px;
-        display: inline-block;
-        position: relative;
-
-        @include grid-media-min('md') {
-          top: 0;
-          background: $thub-right-arrow-black-md;
-        }
-      }
-
-      &:hover,
-      &:focus,
-      &:active {
-          &::after {
-            background: $thub-right-arrow-white-sm;
-
-            @include grid-media-min('md') {
-              background: $thub-right-arrow-white-md;
-            }
-          }
-      }
-
-      &.mailto,
-      &.simplesamlphp-auth-login-link,
-      &.samlauth-login {
-        &::after {
-          content: none;
-        }
-      }
-
-    }
-  }
-
-  .su-button--big,
-  .su-button--big.su-link {
-    font-size: 2.1rem;
-    padding: 1.1rem 3rem 1.4rem 3rem;
-  
-    @include grid-media-min('md') {
-      font-size: 2.4rem;
-      padding: 1.6rem 3.5rem 1.9rem 3.5rem;
-    }
-
-    &::after {
-      margin-left: 1rem;
-
-      @include grid-media-min('md') {
-        margin-left: 2rem;
-      }
-    }
-
-    &:not(.su-link--external) {
-      &::after {
-        content: "";
-        background: $thub-right-arrow-black-sm;
-        height: 16px;
-        width: 23px;
-        top: 2px;
-        display: inline-block;
-        position: relative;
-        
-        @include grid-media-min('md') {
-          height: 20px;
-          background: $thub-right-arrow-black-md;
-        }
-      }
-      
-      &:hover,
-      &:focus,
-      &:active {
-        &::after {
-          background: $thub-right-arrow-white-sm;
-  
-          @include grid-media-min('md') {
-            background: $thub-right-arrow-white-md;
-          }
-        }
-      }
-  
-      &.mailto {
-        svg {
-          height: 26px;
-          width: 30px;
-        }
-  
-        &::after {
-          content: none;
-        }
-      }
-    }
-  }
 }
 
 // Override conflicting styles

@@ -48,12 +48,14 @@
   // For sizes less than large.
   .taiwan-hub-hero-banner--has-image,
   .ds-entity--stanford-page-title-banner {
-    // // overridding
-    // .su-card {
-    //   .su-card__contents {
-    //     font-family: $su-font-sans;
-    //   }
-    // }
+
+    .su-hero__card {
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+      color: $su-color-white;
+      text-align: center;
+    }
 
     section.su-card__contents {
       .su-card__superhead {
@@ -145,20 +147,10 @@
       }
     }
 
-    .su-hero__card {
-      background: transparent;
-      border: 0;
-      box-shadow: none;
-      color: $su-color-white;
-      text-align: center;
-    }
-
-    span {
-      @include type-d;
-
-      color: $su-color-white;
-      font-family: $su-font-sans;
-      text-transform: uppercase;
+    .su-card__button {
+      a {
+        @include thub-button--big;
+      }
     }
   }
 
