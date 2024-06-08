@@ -1,26 +1,16 @@
 @charset "UTF-8";
 
-// This Hero banner is only for the front page of site on Taiwan Hub subtheme
-
-// Moving the site's global message alert to the top when
-.ds-entity--stanford-global-message {
-  .su-alert {
-    position: relative;
-    z-index: 15;
-  }
-}
+// Taiwan Hub Top image banner
 
 // skip nav look
 .su-skipnav {
-  z-index: 16;
   background-color: $su-color-white;
 }
 
 // Move the image up more to compensate for the admin interface.
 .toolbar-horizontal {
   .su-page-banner {
-    .taiwan-hub-hero-banner--has-image,
-    .ds-entity--stanford-page-title-banner {
+    .ds-entity--stanford-banner {
       @include grid-media-min('md') {
         margin-top: -188px;
       }
@@ -33,76 +23,179 @@
 }
 
 .block--local-tasks {
+  position: absolute;
+  display: inline-block;
+
+  @include grid-media-min('lg') {
+    position: relative;
+    display: block;
+  }
+
   ul {
     flex-wrap: wrap;
   }
+
+  .delete a:before {
+    padding-left: 0;
+  }
 }
 
-.node-stanford-page-su-page-banner > div {
-  header {
-    background: transparent;
-    box-shadow: none;
-  }
+.su-page-banner {
+  .ds-entity--stanford-banner {
+    position: relative;
+    margin-top: -168px;
+    width: 100vw;
+    z-index: 1; // To allow access to click link.
+    clip-path: ellipse(100% 60% at 50% 40%);
 
-  // LG and down only
-  // For sizes less than large.
-  .taiwan-hub-hero-banner--has-image,
-  .ds-entity--stanford-page-title-banner {
-
-    .su-hero__card {
-      background: transparent;
-      border: 0;
-      box-shadow: none;
-      color: $su-color-white;
-      text-align: center;
+    @include grid-media-min('sm') {
+      margin-top: -126px;
     }
 
-    section.su-card__contents {
-      .su-card__superhead {
-        @include slab;
+    @include grid-media-min('md') {
+      margin-top: -138px;
+    }
 
-        font-size: 1.5rem;
+    @include grid-media-min('lg') {
+      margin-top: -211px;
+    }
 
-        @include grid-media-min('md') {
-          font-size: 1.8rem;
-        }
+    @include grid-media-min('2xl') {
+      margin-top: -152px;
+    }
+  }
+
+  .su-hero {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: flex-end;
+
+    // Where we set the height of the hero block image
+    min-height: 600px;
+
+    // Fix for accessibility per ODA request. Images are often turned off.
+    background-color: $su-color-black;
+    z-index: -1;
+  }
+
+  .su-hero__media {
+    position: absolute;
+    background: transparent;
+
+    picture {
+      position: relative;
+      z-index: -1;
+      display: block;
+    }
+
+    img,
+    picture {
+      object-position: bottom;
+    }
+
+    // Fix for accessibility per ODA request. Images are often turned off. Without the min-height everything
+    // collapses up and is invisible.
+    .image,
+    .media,
+    & > article,
+    & > div {
+      min-height: 350px;
+    }
+  }
+
+  .su-hero__card {
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    color: $su-color-white;
+    text-align: center;
+    bottom: unset;
+    left: auto;
+    max-width: unset;
+    margin: 0;
+  }
+
+  section.su-card__contents {
+    @include responsive-spacing('padding-top', 8);
+
+    margin: 0 auto;
+    max-width: 654px;
+    margin-bottom: 4rem;
+    margin-top: 16rem;
+    
+    @include grid-media-min('md') {
+      margin-top: 14rem;
+      }
+      
+      @include grid-media-min('lg') {
+        margin-top: 20rem;
+        margin-bottom: 10rem;
+    }
+
+    @include grid-media-min('2xl') {
+      margin-top: 12rem;
+    }
+
+    &::before {
+      @include responsive-spacing('padding-bottom', 2);
+
+      display: block;
+      content: $thub-bridge-logo-xs;
+
+      @include grid-media-min('sm') {
+        content: $thub-bridge-logo-sm;
       }
 
-      h2 {
-        font-size: 4.7rem;
-
-        @include grid-media-min('md') {
-          font-size: 6.4rem;
-        }
+      @include grid-media-min('md') {
+        content: $thub-bridge-logo-md;
       }
+    }
 
-      h2,
-      h3,
-      h4,
-      h5,
-      .su-font-splash {
-        @include slab;
+    .su-card__superhead {
+      @include slab;
 
+      font-size: 1.5rem;
+
+      @include grid-media-min('md') {
+        font-size: 1.8rem;
+      }
+    }
+
+    h2 {
+      font-size: 4.7rem;
+
+      @include grid-media-min('md') {
+        font-size: 6.4rem;
+      }
+    }
+
+    h2,
+    h3,
+    h4,
+    h5,
+    .su-font-splash {
+      @include slab;
+
+      font-weight: $su-font-regular;
+      color: $su-color-white;
+
+      a {
+        color: $thub-color-ochre-light;
         font-weight: $su-font-regular;
-        color: $su-color-white;
 
-        a {
-          color: $thub-color-ochre-light;
-          font-weight: $su-font-regular;
+        &::after {
+          background-color: $thub-color-ochre-light;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+          color: $su-color-white;
+          text-decoration: underline;
 
           &::after {
-            background-color: $thub-color-ochre-light;
-          }
-
-          &:hover,
-          &:focus,
-          &:active {
-            color: $su-color-white;
-            text-decoration: underline;
-
-            &::after {
-              background-color: $su-color-white;
-            }
+            background-color: $su-color-white;
           }
         }
       }
@@ -153,140 +246,4 @@
       }
     }
   }
-
-  // LG and up only
-  // @include grid-media-min('lg') {
-  .taiwan-hub-hero-banner--has-image,
-  .ds-entity--stanford-page-title-banner {
-    position: relative;
-    margin-top: -418px;
-    width: 100vw;
-    z-index: 1; // To allow access to click link.
-    clip-path: ellipse(100% 60% at 50% 40%);
-
-    @include grid-media-min('sm') {
-      margin-top: -376px;
-    }
-
-    @include grid-media-min('md') {
-      margin-top: -138px;
-    }
-
-    @include grid-media-min('md') {
-      margin-top: -211px;
-    }
-
-    @include grid-media-min('2xl') {
-      margin-top: -152px;
-    }
-  }
-
-  .su-hero {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    justify-content: flex-end;
-
-    // Where we set the height of the hero block image
-    min-height: 800px;
-
-    // Fix for accessibility per ODA request. Images are often turned off.
-    background-color: $su-color-black;
-    z-index: -1;
-
-    .su-hero__media {
-      position: absolute;
-
-      img,
-      picture {
-        object-position: bottom;
-      }
-
-      // Fix for accessibility per ODA request. Images are often turned off. Without the min-height everything
-      // collapses up and is invisible.
-      .image,
-      .media,
-      & > article,
-      & > div {
-        min-height: 350px;
-      }
-    }
-  }
-
-  .su-hero__media {
-    background: transparent;
-
-    picture {
-      position: relative;
-      z-index: -1;
-      display: block;
-    }
-  }
-
-  section.su-card__contents {
-    @include responsive-spacing('padding-bottom', 6);
-
-    margin: 0 auto;
-    max-width: 654px;
-    margin-top: 25rem;
-    padding-bottom: 8rem;
-
-    &::before {
-      @include responsive-spacing('padding-bottom', 2);
-
-      display: block;
-      content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='216' height='52' viewBox='0 0 466 109' fill='none'%3E%3Cpath d='M466 78.213C271.912 52.3377 169.203 56.0196 0 104.261V78.213C188.098 37.7464 289.351 42.8942 466 78.213Z' fill='%2330B0BA'/%3E%3Cpath d='M466 109C289.863 69.5361 187.471 70.6364 0 109C171.55 60.7227 273.013 55.5636 466 82.7941V109Z' fill='%23CFB854'/%3E%3Cpath d='M120.168 0C74.0287 42.229 47.8856 60.8766 0 71.0868C44.8874 67.9809 71.4901 52.114 120.168 11.7257C212.512 56.6132 262.574 54.8511 349.325 11.7257C406.846 56.6067 431.512 68.005 466 71.0868C419.232 60.1845 393.887 41.8166 349.325 0C261.684 46.5939 211.534 47.2195 120.168 0Z' fill='url(%23paint0_linear_4915_8981)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear_4915_8981' x1='0' y1='0' x2='84.6459' y2='242.251' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%2330B0BA'/%3E%3Cstop offset='1' stop-color='%23CFB853'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E");
-
-      @include grid-media-min('sm') {
-        content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='336' height='79' viewBox='0 0 466 109' fill='none'%3E%3Cpath d='M466 78.213C271.912 52.3377 169.203 56.0196 0 104.261V78.213C188.098 37.7464 289.351 42.8942 466 78.213Z' fill='%2330B0BA'/%3E%3Cpath d='M466 109C289.863 69.5361 187.471 70.6364 0 109C171.55 60.7227 273.013 55.5636 466 82.7941V109Z' fill='%23CFB854'/%3E%3Cpath d='M120.168 0C74.0287 42.229 47.8856 60.8766 0 71.0868C44.8874 67.9809 71.4901 52.114 120.168 11.7257C212.512 56.6132 262.574 54.8511 349.325 11.7257C406.846 56.6067 431.512 68.005 466 71.0868C419.232 60.1845 393.887 41.8166 349.325 0C261.684 46.5939 211.534 47.2195 120.168 0Z' fill='url(%23paint0_linear_4915_8981)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear_4915_8981' x1='0' y1='0' x2='84.6459' y2='242.251' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%2330B0BA'/%3E%3Cstop offset='1' stop-color='%23CFB853'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E");
-      }
-
-      @include grid-media-min('md') {
-        content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='466' height='109' viewBox='0 0 466 109' fill='none'%3E%3Cpath d='M466 78.213C271.912 52.3377 169.203 56.0196 0 104.261V78.213C188.098 37.7464 289.351 42.8942 466 78.213Z' fill='%2330B0BA'/%3E%3Cpath d='M466 109C289.863 69.5361 187.471 70.6364 0 109C171.55 60.7227 273.013 55.5636 466 82.7941V109Z' fill='%23CFB854'/%3E%3Cpath d='M120.168 0C74.0287 42.229 47.8856 60.8766 0 71.0868C44.8874 67.9809 71.4901 52.114 120.168 11.7257C212.512 56.6132 262.574 54.8511 349.325 11.7257C406.846 56.6067 431.512 68.005 466 71.0868C419.232 60.1845 393.887 41.8166 349.325 0C261.684 46.5939 211.534 47.2195 120.168 0Z' fill='url(%23paint0_linear_4915_8981)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear_4915_8981' x1='0' y1='0' x2='84.6459' y2='242.251' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%2330B0BA'/%3E%3Cstop offset='1' stop-color='%23CFB853'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E");
-      }
-    }
-  }
-
-  a {
-    color: $su-color-white;
-    font-weight: $su-font-bold;
-    text-decoration: none;
-  }
-
-  .su-hero__card {
-    bottom: unset;
-    left: auto;
-    max-width: unset;
-  }
-
-  span {
-    color: $su-color-white;
-    font-family: $su-font-sans;
-    text-transform: uppercase;
-  }
-
-  @include grid-media-min('xl') {
-    .taiwan-hub-hero-banner--has-image,
-    .ds-entity--stanford-page-title-banner {
-      margin-top: -350px;
-    }
-  }
-
-  @include grid-media-min('2xl') {
-    .taiwan-hub-hero-banner--has-image,
-    .ds-entity--stanford-page-title-banner {
-      margin-top: -290px;
-    }
-  }
 }
-
-// Page Title Banner
-// .su-page-banner {
-//   .ptype-stanford-banner {
-//     section.su-card__contents {
-//       &::before {
-//         content: none;
-//       }
-//     }
-//   }
-// }
