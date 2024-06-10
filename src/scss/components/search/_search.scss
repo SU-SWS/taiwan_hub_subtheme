@@ -13,17 +13,12 @@
       align-self: center;
 
       i {
-        // color: $su-color-cardinal-red-dark;
-        // color: $su-color-white;
         color: $thub-color-ochre-light;
-        // transform: scaleX(-1);
 
         &:hover,
         &:focus,
         &:active {
           color: $su-color-white;
-          // color: $su-color-black;
-          // text-decoration: underline;
         }
       }
     }
