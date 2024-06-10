@@ -2,12 +2,7 @@
 
 // Taiwan Hub Top image banner
 
-// skip nav look
-.su-skipnav {
-  background-color: $su-color-white;
-}
-
-// Move the image up more to compensate for the admin interface.
+// Adjust for admin interface while signed in
 .toolbar-horizontal {
   .su-page-banner {
     .ds-entity--stanford-banner {
@@ -25,14 +20,33 @@
 .block--local-tasks {
   position: absolute;
   display: inline-block;
-
+  right: 0;
+  margin-top: 2rem;
+  
   @include grid-media-min('lg') {
     position: relative;
     display: block;
+    // top: 4rem;
+    top: 6rem;
+    margin-top: 0;
   }
 
   ul {
     flex-wrap: wrap;
+    flex-direction: column;
+    margin-top: 0;
+
+    @include grid-media-min('lg') {
+      flex-direction: row;
+    }
+  }
+
+  a {
+    display: block;
+
+    @include grid-media-min('lg') {
+      display: inline;
+    }
   }
 
   .delete a:before {
@@ -40,6 +54,24 @@
   }
 }
 
+// Alert that appears after adding / editing a page
+main .su-alert {
+  margin-top: 2rem;
+  z-index: 12;
+  position: absolute;
+  width: 30%;
+
+  @include grid-media-min('lg') {
+    margin-top: -3rem;
+    width: 100%;
+  }
+
+  .su-alert__dismiss {
+    margin-left: 0;
+  }
+}
+
+// Top banner
 .su-page-banner {
   .ds-entity--stanford-banner {
     position: relative;
