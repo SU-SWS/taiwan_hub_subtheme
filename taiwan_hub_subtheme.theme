@@ -20,3 +20,21 @@ function taiwan_hub_subtheme_theme_suggestions_block_alter(array &$suggestions, 
     $suggestions[] = 'block__stanford_basic_search';
   }
 }
+
+function taiwan_hub_subtheme_preprocess_page(&$variables) {
+  $variables['add_curved_background'] = TRUE;
+  
+  if(
+    isset($variables['node']) && 
+    $variables['node'] instanceof \Drupal\node\NodeInterface &&
+    $variables['node']->hasField('su_page_banner') &&
+    $variables['node']->get('su_page_banner')->count()
+  ) {
+    $banner_id = $variables['node']->get('su_page_banner')->get(0)->get('target_id')->getString();
+    $top_banner = \Drupal::entityTypeManager()->getStorage('paragraph')->load($banner_id);
+
+    if($top_banner){
+      $variables['add_curved_background'] = FALSE;
+    }
+  }
+}

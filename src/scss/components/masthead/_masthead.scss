@@ -1,0 +1,88 @@
+@charset "UTF-8";
+
+// skip nav look
+.su-skipnav {
+  background-color: $su-color-white;
+}
+
+// Masthead curved background
+.curved-background {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: url("../assets/png/nav-bg.png"), #990d31;
+  background-size: cover;
+  background-repeat: no-repeat;
+  clip-path: ellipse(100% 60% at 50% 40%);
+}
+
+// Adjust if global message is applied
+.block-taiwan-hub-subtheme-config-pages-stanford-global-msg ~ .curved-background {
+  height: 45%;
+
+  @include grid-media-min('lg') {
+    height: 63%;
+  }
+}
+
+// Masthead and lockup option m
+.su-masthead {
+  background-color: transparent;
+  box-shadow: none;
+
+  .su-lockup {
+    z-index: 10010;
+
+    @include grid-media-min('2xl') {
+      max-width: fit-content;
+    }
+
+    .su-lockup__line1,
+    .su-lockup__line2,
+    .su-lockup__line3,
+    .su-lockup__line4,
+    .su-lockup__line5 {
+      color: $su-color-white;
+    }
+
+    .su-lockup__wordmark {
+      color: $su-color-white;
+    }
+
+    @include grid-media-min('sm') {
+      a {
+        display: flex;
+      }
+
+      .su-lockup__cell1 {
+        padding-right: 7px;
+        align-self: flex-end;
+        border-right: 1px solid $su-color-white;
+      }
+
+      .su-lockup__cell2 {
+        border-left: 1px solid $su-color-white;
+        padding-left: 7px;
+
+        .su-lockup__line1 {
+          margin-top: -.7rem;
+          margin-left: unset;
+        }
+
+        .su-lockup__line2 {
+          line-height: .7em;
+          margin-top: .3rem;
+          margin-left: unset;
+        }
+      }
+    }
+  }
+
+  >section:last-of-type {
+    margin-bottom: 4rem;
+
+    @include grid-media-min('2xl') {
+      flex-wrap: nowrap;
+    }
+  }
+}

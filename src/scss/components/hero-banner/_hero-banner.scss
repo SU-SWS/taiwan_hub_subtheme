@@ -1,0 +1,280 @@
+@charset "UTF-8";
+
+// Taiwan Hub Top image banner
+
+// Adjust for admin interface while signed in
+.toolbar-horizontal {
+  .su-page-banner {
+    .ds-entity--stanford-banner {
+      @include grid-media-min('md') {
+        margin-top: -188px;
+      }
+
+      @include grid-media-min('lg') {
+        margin-top: -261px;
+      }
+    }
+  }
+}
+
+.block--local-tasks {
+  position: absolute;
+  display: inline-block;
+  right: 0;
+  margin-top: 2rem;
+  
+  @include grid-media-min('lg') {
+    position: relative;
+    display: block;
+    top: 6rem;
+    margin-top: 0;
+  }
+
+  ul {
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-top: 0;
+
+    @include grid-media-min('lg') {
+      flex-direction: row;
+    }
+  }
+
+  a {
+    display: block;
+
+    @include grid-media-min('lg') {
+      display: inline;
+    }
+  }
+
+  .delete a:before {
+    padding-left: 0;
+  }
+}
+
+// Alert that appears after adding / editing a page
+main .su-alert {
+  margin-top: 2rem;
+  z-index: 12;
+  position: absolute;
+  width: 30%;
+
+  @include grid-media-min('lg') {
+    margin-top: -3rem;
+    width: 100%;
+  }
+
+  .su-alert__dismiss {
+    margin-left: 0;
+  }
+}
+
+// Top banner
+.su-page-banner {
+  .ds-entity--stanford-banner {
+    position: relative;
+    margin-top: -168px;
+    width: 100vw;
+    z-index: 1; // To allow access to click link.
+    clip-path: ellipse(100% 60% at 50% 40%);
+
+    @include grid-media-min('sm') {
+      margin-top: -126px;
+    }
+
+    @include grid-media-min('md') {
+      margin-top: -138px;
+    }
+
+    @include grid-media-min('lg') {
+      margin-top: -211px;
+    }
+
+    @include grid-media-min('2xl') {
+      margin-top: -152px;
+    }
+  }
+
+  .su-hero {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: flex-end;
+
+    // Where we set the height of the hero block image
+    min-height: 600px;
+
+    // Fix for accessibility per ODA request. Images are often turned off.
+    background-color: $su-color-black;
+    z-index: -1;
+  }
+
+  .su-hero__media {
+    position: absolute;
+    background: transparent;
+
+    picture {
+      position: relative;
+      z-index: -1;
+      display: block;
+    }
+
+    img,
+    picture {
+      object-position: bottom;
+    }
+
+    // Fix for accessibility per ODA request. Images are often turned off. Without the min-height everything
+    // collapses up and is invisible.
+    .image,
+    .media,
+    & > article,
+    & > div {
+      min-height: 350px;
+    }
+  }
+
+  .su-hero__card {
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    color: $su-color-white;
+    text-align: center;
+    bottom: unset;
+    left: auto;
+    max-width: unset;
+    margin: 0;
+  }
+
+  section.su-card__contents {
+    @include responsive-spacing('padding-top', 8);
+
+    margin: 0 auto;
+    max-width: 654px;
+    margin-bottom: 4rem;
+    margin-top: 16rem;
+    
+    @include grid-media-min('md') {
+      margin-top: 14rem;
+      }
+      
+      @include grid-media-min('lg') {
+        margin-top: 20rem;
+        margin-bottom: 10rem;
+    }
+
+    @include grid-media-min('2xl') {
+      margin-top: 12rem;
+    }
+
+    &::before {
+      @include responsive-spacing('padding-bottom', 2);
+
+      display: block;
+      content: $thub-bridge-logo-xs;
+
+      @include grid-media-min('sm') {
+        content: $thub-bridge-logo-sm;
+      }
+
+      @include grid-media-min('md') {
+        content: $thub-bridge-logo-md;
+      }
+    }
+
+    .su-card__superhead {
+      @include slab;
+
+      font-size: 1.5rem;
+
+      @include grid-media-min('md') {
+        font-size: 1.8rem;
+      }
+    }
+
+    h2 {
+      font-size: 4.7rem;
+
+      @include grid-media-min('md') {
+        font-size: 6.4rem;
+      }
+    }
+
+    h2,
+    h3,
+    h4,
+    h5,
+    .su-font-splash {
+      @include slab;
+
+      font-weight: $su-font-regular;
+      color: $su-color-white;
+
+      a {
+        color: $thub-color-ochre-light;
+        font-weight: $su-font-regular;
+
+        &::after {
+          background-color: $thub-color-ochre-light;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+          color: $su-color-white;
+          text-decoration: underline;
+
+          &::after {
+            background-color: $su-color-white;
+          }
+        }
+      }
+    }
+
+    p {
+      color: $su-color-white;
+      font-size: 2.5rem;
+      font-weight: $su-font-regular;
+
+      @include grid-media-min('md') {
+        font-size: 3rem;
+      }
+
+      a {
+        color: $thub-color-ochre-light;
+        font-weight: $su-font-regular;
+        text-decoration: underline;
+
+        &::after {
+          background-color: $thub-color-ochre-light;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+          color: $su-color-white;
+          text-decoration: underline;
+
+          &::after {
+            background-color: $su-color-white;
+          }
+
+          &.mailto svg {
+            fill: $su-color-white;
+          }
+        }
+
+        &.mailto svg {
+          fill: $thub-color-ochre-light;
+        }
+      }
+    }
+
+    .su-card__button {
+      a {
+        @include thub-button--big;
+      }
+    }
+  }
+}
