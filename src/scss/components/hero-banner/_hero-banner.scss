@@ -74,25 +74,25 @@ main .su-alert {
 .su-page-banner {
   .ds-entity--stanford-banner {
     position: relative;
-    margin-top: -168px;
+    margin-top: -169px;
     width: 100vw;
     z-index: 1; // To allow access to click link.
-    clip-path: ellipse(100% 60% at 50% 40%);
-
+    clip-path: ellipse(80% 60% at 50% 40%);
+    
     @include grid-media-min('sm') {
-      margin-top: -126px;
-    }
+      margin-top: -128px;
+      }
 
     @include grid-media-min('md') {
-      margin-top: -138px;
+      margin-top: -140px;
     }
 
     @include grid-media-min('lg') {
-      margin-top: -211px;
+      margin-top: -213px;
     }
 
     @include grid-media-min('2xl') {
-      margin-top: -152px;
+      margin-top: -153px;
     }
   }
 
@@ -125,8 +125,7 @@ main .su-alert {
       object-position: bottom;
     }
 
-    // Fix for accessibility per ODA request. Images are often turned off. Without the min-height everything
-    // collapses up and is invisible.
+    // Fix for accessibility per ODA request. Images are often turned off. Without the min-height everything collapses up and is invisible.
     .image,
     .media,
     & > article,
@@ -152,16 +151,19 @@ main .su-alert {
 
     margin: 0 auto;
     max-width: 654px;
-    margin-bottom: 4rem;
+    margin-bottom: 12rem;
     margin-top: 16rem;
     
     @include grid-media-min('md') {
       margin-top: 14rem;
-      }
-      
-      @include grid-media-min('lg') {
-        margin-top: 20rem;
-        margin-bottom: 10rem;
+    }
+
+    @include grid-media-min('lg') {
+      margin-top: 20rem;
+    }
+
+    @include grid-media-min('xl') {
+      margin-bottom: 10rem;
     }
 
     @include grid-media-min('2xl') {

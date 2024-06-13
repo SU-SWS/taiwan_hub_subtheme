@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+h1 {
+  @include thub-heading--badge;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  @include slab;
+
+  font-weight: $su-font-regular; 
+}
