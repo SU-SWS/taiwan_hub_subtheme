@@ -130,6 +130,18 @@
         @include thub-type-c;
       }
     }
+
+    h3 {
+      @include thub-type-d;
+    }
+    
+    h4 {
+      @include thub-type-e;
+    }
+    
+    h5 {
+      @include thub-type-f;
+    }
   }
 
   .su-signup-form {
