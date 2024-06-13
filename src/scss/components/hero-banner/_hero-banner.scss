@@ -196,11 +196,7 @@ main .su-alert {
     }
 
     h2 {
-      font-size: 4.7rem;
-
-      @include grid-media-min('md') {
-        font-size: 6.4rem;
-      }
+      @include thub-type-a;
     }
 
     h2,
@@ -211,7 +207,6 @@ main .su-alert {
       @include slab;
 
       font-weight: $su-font-regular;
-      color: $su-color-white;
 
       a {
         color: $thub-color-ochre-light;
