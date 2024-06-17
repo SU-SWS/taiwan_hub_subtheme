@@ -57,7 +57,7 @@
       .su-lockup__cell1 {
         padding-right: 7px;
         align-self: flex-end;
-        border-right: 1px solid $su-color-white;
+        border-right: none;
       }
 
       .su-lockup__cell2 {
@@ -84,5 +84,15 @@
     @include grid-media-min('2xl') {
       flex-wrap: nowrap;
     }
+  }
+}
+
+// Lockup fixup for /user page
+.page-user-login {
+  .su-lockup {
+    flex: unset;
+    padding: 3rem;
+    background: $su-color-black;
+    opacity: .9;
   }
 }

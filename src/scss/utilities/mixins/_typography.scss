@@ -1,0 +1,91 @@
+@charset "UTF-8";
+
+@mixin thub-type-a {
+  @include slab;
+
+  font-weight: $su-font-regular;
+  font-size: 4.7rem;
+
+  @include grid-media-min('md') {
+    font-size: 5.8rem;
+  }
+
+  @include grid-media-min('2xl') {
+    font-size: 6.4rem;
+  }
+}
+
+@mixin thub-type-b {
+  @include slab;
+
+  font-weight: $su-font-regular;
+  font-size: 3.7rem;
+
+  @include grid-media-min('md') {
+    font-size: 4.6rem;
+  }
+
+  @include grid-media-min('2xl') {
+    font-size: 5.1rem;
+  }
+}
+
+@mixin thub-type-c {
+  @include slab;
+
+  font-weight: $su-font-regular;
+  font-size: 3rem;
+
+  @include grid-media-min('md') {
+    font-size: 3.7rem;
+  }
+
+  @include grid-media-min('2xl') {
+    font-size: 4.1rem;
+  }
+}
+
+@mixin thub-type-d {
+  @include slab;
+
+  font-weight: $su-font-regular;
+  font-size: 2.8rem;
+
+  @include grid-media-min('md') {
+    font-size: 3rem;
+  }
+
+  @include grid-media-min('2xl') {
+    font-size: 3.3rem;
+  }
+}
+
+@mixin thub-type-e {
+  @include slab;
+
+  font-weight: $su-font-regular;
+  font-size: 2.3rem;
+
+  @include grid-media-min('md') {
+    font-size: 2.4rem;
+  }
+
+  @include grid-media-min('2xl') {
+    font-size: 2.6rem;
+  }
+}
+
+@mixin thub-type-f {
+  @include slab;
+
+  font-weight: $su-font-regular;
+  font-size: 1.8rem;
+
+  @include grid-media-min('md') {
+    font-size: 1.9rem;
+  }
+
+  @include grid-media-min('2xl') {
+    font-size: 2.1rem;
+  }
+}

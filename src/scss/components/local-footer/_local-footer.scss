@@ -1,6 +1,8 @@
 @charset "UTF-8";
 
 .su-local-footer {
+  @include responsive-spacing('margin-top', 6);
+
   background-color: $su-color-white;
 
   .thub-gradient-divider {
@@ -79,10 +81,8 @@
     margin-bottom: 0;
 
     .organization {
-      @include slab;
+      @include thub-type-e;
 
-      font-size: 2.3rem;
-      font-weight: $su-font-regular;
       display: block;      
     }
   }
@@ -105,17 +105,12 @@
     }
 
     a {
-      @include slab;
+      @include thub-type-d;
       @include responsive-spacing('margin-left', 2);
       @include responsive-spacing('margin-right', 2);
 
-      font-size: 2.8rem;
       color: $su-color-black;
       margin-left: 3.8rem;
-
-      @include grid-media-min('md') {
-        font-size: 3rem;
-      }
 
       &:hover,
       &:focus,
@@ -129,18 +124,23 @@
     @include responsive-spacing('margin-top', 4);
 
     h2 {
-      @include slab;
-  
-      font-weight: $su-font-regular;
-      font-size: 2.8rem;
-  
+      @include thub-type-d;
+      
       @include grid-media-min('md') {
-        font-size: 3.7rem;
+        @include thub-type-c;
       }
+    }
 
-      @include grid-media-min('2xl') {
-        font-size: 4.1rem;
-      }
+    h3 {
+      @include thub-type-d;
+    }
+    
+    h4 {
+      @include thub-type-e;
+    }
+    
+    h5 {
+      @include thub-type-f;
     }
   }
 
@@ -160,11 +160,7 @@
       margin: 0;
 
       h2 {
-        font-size: 2.4rem;
-    
-        @include grid-media-min('2xl') {
-          font-size: 2.6rem;
-        }
+        @include thub-type-e;
       }
     }
   }

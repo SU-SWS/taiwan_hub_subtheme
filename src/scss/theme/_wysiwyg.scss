@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+main {
+  .su-wysiwyg-text {
+    h2,
+    h3 {
+      @include thub-heading--badge;
+  
+      width: fit-content;
+    }
+  }
+}

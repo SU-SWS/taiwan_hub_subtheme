@@ -30,3 +30,25 @@
     display: none;
   }
 }
+
+// Search node page
+.page-search {
+  .block-taiwan-hub-subtheme-search-form {
+    @include centered-column;
+    @include responsive-spacing('margin-bottom', 2);
+  }
+
+  .search.results {
+    .su-list-unstyled>li {
+      @include responsive-spacing('margin-bottom', 3);
+      @include responsive-spacing('padding-bottom', 2);
+
+      border-bottom: 1px solid $su-color-black;
+
+      &:last-of-type {
+        border-bottom: none;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
