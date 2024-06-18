@@ -53,16 +53,31 @@
   }
 }
 
-// Alert that appears after adding / editing a page
 main .su-alert {
-  margin-top: 2rem;
   z-index: 12;
   position: absolute;
   width: 30%;
 
   @include grid-media-min('lg') {
-    margin-top: -3rem;
     width: 100%;
+  }
+  
+  // Alert that appears after adding / editing a page
+  &.su-alert--info {
+    margin-top: 2rem;
+
+    @include grid-media-min('lg') {
+      margin-top: -3rem;
+    }
+  }
+
+  // Alert that appears for unpublished pages
+  &.su-alert--warning {
+    margin-top: 17rem;
+
+    @include grid-media-min('lg') {
+      margin-top: 7rem;
+    }
   }
 
   .su-alert__dismiss {

@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+.ptype-stanford-entity,
+.paragraph--type--stanford-entity {
+  .ds-entity--stanford-person {
+    .su-card {
+      .su-person-photo {
+        padding: 0 0 0 7rem;
+      }
+
+      .su-person-photo img,
+      .su-person-photo picture {
+        border-radius: 0;
+      }
+
+      section.su-card__contents {
+        padding: 2rem 3rem 3.2rem 3.2rem;
+
+        h2,
+        h3 {
+          @include thub-type-d;
+
+          color: $thub-gradient-lagunita-to-ochre;
+        }
+      }
+    }
+  }
+}
