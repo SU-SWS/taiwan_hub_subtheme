@@ -2,8 +2,12 @@
 
 .ptype-stanford-entity,
 .paragraph--type--stanford-entity {
+
   .ds-entity--stanford-person {
     .su-card {
+      border: none;
+      box-shadow: none;
+
       .su-person-photo {
         padding: 0 0 0 7rem;
       }
@@ -15,12 +19,17 @@
 
       section.su-card__contents {
         padding: 2rem 3rem 3.2rem 3.2rem;
+        text-align: left;
 
         h2,
         h3 {
-          @include thub-type-d;
+          a {
+            @include thub-type-d;
 
-          color: $thub-gradient-lagunita-to-ochre;
+            background: $thub-gradient-lagunita-to-ochre;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
         }
       }
     }
