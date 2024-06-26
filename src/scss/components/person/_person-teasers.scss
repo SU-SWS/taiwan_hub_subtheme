@@ -29,6 +29,14 @@
             background: $thub-gradient-lagunita-to-ochre;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+
+            &:hover,
+            &:focus,
+            &:active {
+              background:  $thub-color-ochre-dark;
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+            }
           }
         }
       }
