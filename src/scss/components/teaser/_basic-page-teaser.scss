@@ -5,16 +5,10 @@
 
 // Card layout.
 // The problem is that the width is set up the dom from where the class on what entity type it is.
-.layout--layout-paragraphs-one-column .paragraph--type--stanford-entity .su-entity-item > div,
-.layout--layout-paragraphs-one-column .ptype-stanford-entity .su-entity-item > div,
-.layout--layout-paragraphs-one-column .stanford-shared-tags .su-entity-item > div,
-.paragraph--type--stanford-entity[data-react-columns="12"] .su-entity-item > div,
-.ptype-stanford-entity[data-react-columns="12"] .su-entity-item > div,
- .stanford-shared-tags[data-react-columns="12"] .su-entity-item > div {
-    margin: 0;
-    width: calc(50% - 40px);
-  }
-
+// .layout--layout-paragraphs-one-column .paragraph--type--stanford-entity .su-entity-item > div {
+//     margin: 0;
+//     width: unset;
+// }
 
 .ptype-stanford-entity,
 .paragraph--type--stanford-entity {
@@ -22,10 +16,12 @@
     // Card display
     .ds-entity--stanford-page {
         .su-card {
-        border: none;
-        box-shadow: none;
+            border: none;
+            box-shadow: none;
 
             section.su-card__contents {
+                padding: 4rem 0 0 0;
+
                 h2,
                 h3 {
                     a {
@@ -33,6 +29,7 @@
                         @include link-icon(arrow-right, 18px, right);
 
                         background: $thub-gradient-lagunita-to-ochre;
+                        background-clip: text;
                         -webkit-background-clip: text;
                         -webkit-text-fill-color: transparent;
 
@@ -44,6 +41,7 @@
                         &:focus,
                         &:active {
                         background: $thub-color-black;
+                        background-clip: text;
                         -webkit-background-clip: text;
                         -webkit-text-fill-color: transparent;
 
