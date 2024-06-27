@@ -3,10 +3,19 @@
 .ptype-stanford-card {
 
     // Card display
-
     .su-card {
         border: none;
         box-shadow: none;
+
+        .image {
+            img,
+            figure {
+                display: block;
+                min-height: 397px;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
 
         section.su-card__contents {
             padding: 4rem 0 0 0;
