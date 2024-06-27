@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+.ptype-stanford-card {
+
+    // Card display
+
+    .su-card {
+        border: none;
+        box-shadow: none;
+
+        section.su-card__contents {
+            padding: 4rem 0 0 0;
+
+            div.su-card__superhead {
+                @include slab;
+
+                font-size: 1.9rem;
+                font-weight: 400;
+                margin-bottom: 0;
+                line-height: 120%;
+              }
+
+            h2,
+            h3 {
+                @include thub-type-b;
+
+                margin-bottom: 0;
+            }
+
+            .su-link--action {
+                font-size: 1.9rem;
+            }
+        }
+    }
+
+}
