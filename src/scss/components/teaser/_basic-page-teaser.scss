@@ -1,15 +1,5 @@
 @charset "UTF-8";
 
-// contextual-region ds-entity--node ds-entity--stanford-person
-// contextual-region ds-entity--node ds-entity--stanford-page
-
-// Card layout.
-// The problem is that the width is set up the dom from where the class on what entity type it is.
-// .layout--layout-paragraphs-one-column .paragraph--type--stanford-entity .su-entity-item > div {
-//     margin: 0;
-//     width: unset;
-// }
-
 .ptype-stanford-entity,
 .paragraph--type--stanford-entity {
 
@@ -28,7 +18,6 @@
                     object-fit: cover;
                 }
             }
-
 
             section.su-card__contents {
                 padding: 4rem 0 0 0;
