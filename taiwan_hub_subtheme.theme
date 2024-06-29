@@ -23,9 +23,9 @@ function taiwan_hub_subtheme_theme_suggestions_block_alter(array &$suggestions, 
 
 function taiwan_hub_subtheme_preprocess_page(&$variables) {
   $variables['add_curved_background'] = TRUE;
-  
+
   if(
-    isset($variables['node']) && 
+    isset($variables['node']) &&
     $variables['node'] instanceof \Drupal\node\NodeInterface &&
     $variables['node']->hasField('su_page_banner') &&
     $variables['node']->get('su_page_banner')->count()
@@ -37,4 +37,55 @@ function taiwan_hub_subtheme_preprocess_page(&$variables) {
       $variables['add_curved_background'] = FALSE;
     }
   }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function taiwan_hub_subtheme_preprocess_ds_entity_view(&$variables) {
+  // if not running on a paragraph, exit out.
+  if (!isset($variables['content']['#paragraph'])) {
+    return;
+  }
+
+  $paragraph = $variables['content']['#paragraph'];
+
+  // Process Cards
+  if ($paragraph->bundle() == 'stanford_card') {
+    taiwan_hub_subtheme_preprocess_card($variables);
+  }
+
+  // Process Banners
+  if ($paragraph->bundle() == 'stanford_banner') {
+    taiwan_hub_subtheme_preprocess_banner($variables);
+  }
+}
+
+
+/**
+ * Implements hook_preprocess_card().
+ */
+function taiwan_hub_subtheme_preprocess_card(&$variables) {
+
+  $paragraph = $variables['content']['#paragraph'];
+
+  // Add border style class to card wrapper.
+  $variables['attributes']['class'][] = $paragraph->getBehaviorSetting('react_paragraphs:card_variant_info', 'card_border_style', 'su-card-wrapper--border-regular');
+
+  $card_info = [];
+
+  // Add card type class to card wrapper. 3rd variable provides the default card type.
+  $card_info['card_type'] = $paragraph->getBehaviorSetting('react_paragraphs:card_variant_info', 'card_type', 'su-card-wrapper--default');
+  $variables['attributes']['class'][] = $card_info['card_type'];
+}
+
+/**
+ * Implements hook_preprocess_banner().
+ */
+function taiwan_hub_subtheme_preprocess_banner(&$variables) {
+
+  $paragraph = $variables['content']['#paragraph'];
+
+  // Add button color style class to card wrapper.
+  $variables['attributes']['class'][] = $paragraph->getBehaviorSetting('react_paragraphs:banner_variant_info', 'banner_style', 'thub-wrapper--banner-default');
 }
