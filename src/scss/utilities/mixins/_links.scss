@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+
+@mixin thub-type-link {
+    color: $thub-color-ochre-light;
+    text-decoration: none;
+
+    &::after {
+      background-color: $thub-color-ochre-light;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: $su-color-white;
+        text-decoration: underline;
+
+      &::after {
+        background-color: $su-color-white;
+      }
+    }
+  }

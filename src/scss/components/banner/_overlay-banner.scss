@@ -1,0 +1,74 @@
+@charset "UTF-8";
+
+.thub-wrapper--banner-overlay {
+    background: $su-color-black url("../assets/png/banner-bg.png") no-repeat 100% / cover;
+
+    .su-hero {
+        justify-content: flex-start;
+        flex-direction: column;
+
+        @include grid-media-min('lg') {
+            flex-direction: row;
+        }
+
+        // Border top? Need to figure out.
+        &::before {
+            background: $thub-gradient-lagunita-to-ochre-to-red;
+            height: 3px;
+            border-radius: 1.5px;
+            display: block;
+            content: ' ';
+        }
+    }
+
+    .su-hero__card {
+        max-width: 500px;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+
+        section.su-card__contents {
+            color: $su-color-white;
+
+            div.su-card__superhead {
+                @include slab;
+
+                font-weight: $su-font-regular;
+                font-size: 1.7rem;
+            }
+
+            h2,
+            h3 {
+                @include thub-type-b;
+            }
+
+            p {
+                font-size: 2.1rem;
+                line-height: 1.5;
+
+                a {
+                    @include thub-type-link;
+                }
+            }
+
+            a.su-link--action {
+                @include thub-type-link;
+            }
+        }
+    }
+    
+    .su-hero__media {
+        right: 0;
+        width: fit-content;
+        min-height: 320px;
+        position: relative;
+
+        @include grid-media-min('lg') {
+            position: absolute;
+            width: 50%;
+        }
+    }
+}
+
+
+
