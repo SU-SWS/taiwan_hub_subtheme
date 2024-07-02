@@ -1,9 +1,10 @@
 @charset "UTF-8";
 
 .thub-wrapper--banner-overlay {
-    background: $su-color-black url("../assets/png/banner-bg.png") no-repeat 100% / cover;
+    background: $su-color-black url("../assets/png/banner-bg.jpg") no-repeat 100% / cover;
 
     .su-hero {
+        display: flex;
         justify-content: flex-start;
         flex-direction: column;
 
@@ -60,12 +61,51 @@
     .su-hero__media {
         right: 0;
         width: fit-content;
-        min-height: 320px;
+        min-height: 370px;
         position: relative;
+
+        @include grid-media-min('md') {
+            // min-height: 768px;
+        }
 
         @include grid-media-min('lg') {
             position: absolute;
             width: 50%;
+            // min-height: 717px;
+        }
+    }
+
+    // Left text
+    .overlay-left {
+         @include grid-media-max('md') {
+            .su-hero__card {
+                // left: 45px;
+                // margin-left: inherit;
+                // right: 45px;
+            }
+        }
+
+        .su-hero__card {
+            left: 8%;
+        }
+    }
+
+    // Right text
+    .overlay-right {
+        .su-hero__media {
+            right: unset;
+        }
+
+        @include grid-media-max('md') {
+            .su-hero__card {
+                left: 45px;
+                margin-left: inherit;
+                right: 45px;
+            }
+        }
+
+        .su-hero__card {
+            right: 7%;
         }
     }
 }
