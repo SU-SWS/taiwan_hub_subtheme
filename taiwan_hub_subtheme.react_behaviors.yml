@@ -12,5 +12,4 @@ banner_variant_info:  # part of the key after the :
       description: Select the button color for displaying this banner.
       options:
         thub-wrapper--banner-default: Default variant
-        thub-wrapper--banner-top: Top variant
         thub-wrapper--banner-overlay: Overlay variant
