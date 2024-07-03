@@ -86,7 +86,12 @@
         }
 
         .su-hero__card {
-            left: 8%;
+            left: 3%;
+            max-width: calc(50% - 70px);
+
+            @include grid-media-max('md') {
+                max-width: calc(100% - 70px);
+            }
         }
     }
 
@@ -105,7 +110,12 @@
         }
 
         .su-hero__card {
-            right: 7%;
+            right: 3%;
+            max-width: calc(50% - 70px);
+
+            @include grid-media-max('md') {
+                max-width: calc(100% - 70px);
+            }
         }
     }
 }
