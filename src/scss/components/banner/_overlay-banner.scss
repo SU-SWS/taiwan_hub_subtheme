@@ -1,0 +1,124 @@
+@charset "UTF-8";
+
+.thub-wrapper--banner-overlay {
+    background: $su-color-black url("../assets/png/banner-bg.jpg") no-repeat 100% / cover;
+
+    // Border top.
+    &::before {
+        background: $thub-gradient-lagunita-to-ochre-to-red;
+        height: 3px;
+        border-radius: 1.5px;
+        display: block;
+        content: ' ';
+    }
+
+    .su-hero {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+
+        @include grid-media-min('lg') {
+            flex-direction: row;
+        }
+    }
+
+    .su-hero__card {
+        max-width: 500px;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+
+        section.su-card__contents {
+            color: $su-color-white;
+
+            div.su-card__superhead {
+                @include slab;
+
+                font-weight: $su-font-regular;
+                font-size: 1.7rem;
+            }
+
+            h2,
+            h3 {
+                @include thub-type-b;
+            }
+
+            p {
+                font-size: 2.1rem;
+                line-height: 1.5;
+
+                a {
+                    @include thub-type-link;
+                }
+            }
+
+            a.su-link--action {
+                @include thub-type-link;
+            }
+        }
+    }
+    
+    .su-hero__media {
+        right: 0;
+        width: fit-content;
+        min-height: 370px;
+        position: relative;
+        background: transparent;
+
+        @include grid-media-max('md') {
+            aspect-ratio: 11/11;
+        }
+
+        @include grid-media-min('lg') {
+            position: absolute;
+            width: 50%;
+        }
+    }
+
+    // Left text
+    .overlay-left {
+        .su-hero__card {
+            left: 3%;
+            max-width: 500px;
+
+            @include grid-media-max('lg') {
+                width: calc(50% - 70px);
+            }
+
+            @include grid-media-max('md') {
+                width: calc(100% - 70px);
+            }
+        }
+    }
+
+    // Right text
+    .overlay-right {
+        .su-hero__media {
+            right: unset;
+        }
+
+        @include grid-media-max('md') {
+            .su-hero__card {
+                left: 45px;
+                margin-left: inherit;
+                right: 45px;
+            }
+        }
+
+        .su-hero__card {
+            right: 3%;
+            max-width: 500px;
+
+            @include grid-media-max('lg') {
+                width: calc(50% - 70px);
+            }
+
+            @include grid-media-max('md') {
+                width: calc(100% - 70px);
+            }
+        }
+    }
+}
+
+
+
