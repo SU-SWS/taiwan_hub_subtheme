@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+.ptype-stanford-entity,
+.paragraph--type--stanford-entity {
+
+    // Card display
+    .ds-entity--stanford-page {
+        .su-card {
+            border: none;
+            box-shadow: none;
+
+            .image {
+                img,
+                figure {
+                    display: block;
+                    min-height: 320px;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            section.su-card__contents {
+                padding: 4rem 0 0 0;
+
+                h2,
+                h3 {
+                    a {
+                        @include thub-type-d;
+                        @include link-icon(arrow-right, 18px, right);
+
+                        background: $thub-gradient-lagunita-to-ochre;
+                        background-clip: text;
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+
+                        &::after {
+                            background-color: $thub-color-ochre-dark;
+                        }
+
+                        &:hover,
+                        &:focus,
+                        &:active {
+                        background: $thub-color-black;
+                        background-clip: text;
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+
+                            &::after {
+                                background-color: $thub-color-black;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
