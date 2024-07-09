@@ -63,6 +63,7 @@
         width: fit-content;
         min-height: 370px;
         position: relative;
+        background: transparent;
 
         @include grid-media-max('md') {
             aspect-ratio: 11/11;
