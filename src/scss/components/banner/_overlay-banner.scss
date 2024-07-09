@@ -3,6 +3,15 @@
 .thub-wrapper--banner-overlay {
     background: $su-color-black url("../assets/png/banner-bg.jpg") no-repeat 100% / cover;
 
+    // Border top.
+    &::before {
+        background: $thub-gradient-lagunita-to-ochre-to-red;
+        height: 3px;
+        border-radius: 1.5px;
+        display: block;
+        content: ' ';
+    }
+
     .su-hero {
         display: flex;
         justify-content: flex-start;
@@ -10,15 +19,6 @@
 
         @include grid-media-min('lg') {
             flex-direction: row;
-        }
-
-        // Border top? Need to figure out.
-        &::before {
-            background: $thub-gradient-lagunita-to-ochre-to-red;
-            height: 3px;
-            border-radius: 1.5px;
-            display: block;
-            content: ' ';
         }
     }
 
@@ -64,33 +64,28 @@
         min-height: 370px;
         position: relative;
 
-        @include grid-media-min('md') {
-            // min-height: 768px;
+        @include grid-media-max('md') {
+            aspect-ratio: 11/11;
         }
 
         @include grid-media-min('lg') {
             position: absolute;
             width: 50%;
-            // min-height: 717px;
         }
     }
 
     // Left text
     .overlay-left {
-         @include grid-media-max('md') {
-            .su-hero__card {
-                // left: 45px;
-                // margin-left: inherit;
-                // right: 45px;
-            }
-        }
-
         .su-hero__card {
             left: 3%;
-            max-width: calc(50% - 70px);
+            max-width: 500px;
+
+            @include grid-media-max('lg') {
+                width: calc(50% - 70px);
+            }
 
             @include grid-media-max('md') {
-                max-width: calc(100% - 70px);
+                width: calc(100% - 70px);
             }
         }
     }
@@ -111,10 +106,14 @@
 
         .su-hero__card {
             right: 3%;
-            max-width: calc(50% - 70px);
+            max-width: 500px;
+
+            @include grid-media-max('lg') {
+                width: calc(50% - 70px);
+            }
 
             @include grid-media-max('md') {
-                max-width: calc(100% - 70px);
+                width: calc(100% - 70px);
             }
         }
     }
