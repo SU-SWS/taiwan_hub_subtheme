@@ -5,24 +5,30 @@
 
   background-color: $su-color-white;
 
-  .thub-gradient-divider {
-    @include centered-column;
+  .su-local-footer__columns,
+  .su-local-footer__header {
+    max-width: none;
+  }
 
+  .thub-gradient-divider {
+    width: calc(100% - 200px);
+    margin: 0 auto;
     background: $thub-gradient-lagunita-to-ochre-to-red;
     height: 3px;
     border-radius: 1.5px;
   }
 
+
   .su-local-footer__header {
     .su-link--internal {
       @include thub-button--gradient;
-      
+
       border: none;
-      
+
       &::after {
         background-color: $su-color-black;
       }
-      
+
       &:hover,
       &:focus,
       &:active {
@@ -32,7 +38,7 @@
       }
     }
   }
-  
+
   .su-local-footer__columns {
     @include responsive-spacing('padding-top', 7);
 
@@ -83,7 +89,7 @@
     .organization {
       @include thub-type-e;
 
-      display: block;      
+      display: block;
     }
   }
 
@@ -105,7 +111,7 @@
     }
 
     a {
-      @include thub-type-d;
+      @include thub-type-e;
       @include responsive-spacing('margin-left', 2);
       @include responsive-spacing('margin-right', 2);
 
@@ -125,7 +131,7 @@
 
     h2 {
       @include thub-type-d;
-      
+
       @include grid-media-min('md') {
         @include thub-type-c;
       }
@@ -134,11 +140,11 @@
     h3 {
       @include thub-type-d;
     }
-    
+
     h4 {
       @include thub-type-e;
     }
-    
+
     h5 {
       @include thub-type-f;
     }
@@ -146,14 +152,11 @@
 
   .su-signup-form {
     #signup-email {
-      @include responsive-spacing('margin-top', 1);
-      @include responsive-spacing('margin-bottom', 1);
-
       padding: 1.6rem 2.2rem 1.8rem 2.2rem;
       border-radius: 6px;
       min-height: 5.7rem;
-      margin-top: 2rem;
-      margin-bottom: 2.7rem;
+      margin-bottom: 1.2rem;
+      margin-top: 1.8rem;
     }
 
     .su-wysiwyg-text {
