@@ -16,6 +16,14 @@
     background: $thub-gradient-lagunita-to-ochre-to-red;
     height: 3px;
     border-radius: 1.5px;
+
+    @include grid-media-max('sm') {
+      width: calc(100% - 40px);
+    }
+
+    @include grid-media-max('md') {
+      width: calc(100% - 100px);
+    }
   }
 
 
