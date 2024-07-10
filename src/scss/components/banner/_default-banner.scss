@@ -15,11 +15,15 @@
         background: $su-color-black url("../assets/png/banner-bg.jpg") no-repeat 100% / cover;
         border: none;
         box-shadow: none;
-        padding: 9.0rem 3.8rem 3.8rem 2.8rem;
-        min-width: 622px;
+        min-width: 450px;
+
+        @include grid-media-min('md') {
+            min-width: 622px;
+        }
 
         section.su-card__contents {
             color: $su-color-white;
+            padding: 11.0rem 5.0rem 5.5rem 3.8rem;
 
             div.su-card__superhead {
                 @include slab;
