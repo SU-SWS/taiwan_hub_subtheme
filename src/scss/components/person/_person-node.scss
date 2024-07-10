@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+.content {
+  .layout--section-person-header .su-quote__media.flex-2-of-12 .field-media-image {
+    border-radius: unset;
+  }
+
+  .su-person-content {
+    .main-region {
+      .block__title {
+        @include thub-heading--badge;
+        @include type-c;
+      }
+
+      .node-stanford-person-su-person-affiliations {
+        a {
+          @include thub-button--gradient;
+        }
+      }
+    }
+  }
+}
+
+// .node-stanford-person-su-person-education h2.block__title,
+// .node-stanford-person-su-person-research h2,
+// .node-stanford-person-su-person-affiliations h2 {
+//   @include thub-heading--badge;
+//   @include type-c;
+// }
