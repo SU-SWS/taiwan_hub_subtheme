@@ -1,10 +1,11 @@
 @charset "UTF-8";
-.su-masthead {
-  > section:last-of-type {
-    flex-wrap: nowrap;
-  }
 
+.su-masthead {
   @include grid-media-min('lg') {
+    > section:last-of-type {
+      flex-wrap: nowrap;
+    }
+
     .su-lockup {
       max-width: calc(50.66667% - 6.66667px);
     }
