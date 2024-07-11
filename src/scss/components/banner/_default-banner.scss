@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+.thub-wrapper--banner-default {
+
+    // Border top.
+    &::before {
+        background: $thub-gradient-lagunita-to-ochre-to-red;
+        height: 3px;
+        border-radius: 1.5px;
+        display: block;
+        content: ' ';
+    }
+
+    .su-hero__card {
+        background: $su-color-black url("../assets/png/banner-bg.jpg") no-repeat 100% / cover;
+        border: none;
+        box-shadow: none;
+
+        @include grid-media-min('md') {
+            min-width: 622px;
+        }
+
+        section.su-card__contents {
+            color: $su-color-white;
+            padding: 11.0rem 5.0rem 5.5rem 3.8rem;
+
+            div.su-card__superhead {
+                @include slab;
+
+                font-weight: $su-font-regular;
+                font-size: 1.7rem;
+            }
+
+            h2,
+            h3 {
+                @include thub-type-b;
+            }
+
+            p {
+                font-size: 2.1rem;
+                line-height: 1.5;
+
+                a {
+                    @include thub-type-link;
+                }
+            }
+
+            a.su-link--action {
+                @include thub-type-link;
+            }
+        }
+    }
+}
+
+
+
