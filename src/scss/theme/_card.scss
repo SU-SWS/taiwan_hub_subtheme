@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+.su-card {
+    .su-card__contents {
+        p {
+            font-size: 2rem;
+
+            @include grid-media-max('md') {
+                font-size: 1.8rem;
+            }
+        }
+    }
+}
