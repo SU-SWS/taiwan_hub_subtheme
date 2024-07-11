@@ -61,7 +61,7 @@ main .su-alert {
   @include grid-media-min('lg') {
     width: 100%;
   }
-  
+
   // Alert that appears after adding / editing a page
   &.su-alert--info {
     margin-top: 2rem;
@@ -168,6 +168,7 @@ main .su-alert {
     max-width: 654px;
     margin-bottom: 12rem;
     margin-top: 16rem;
+    max-width: 800px;
 
     @include grid-media-min('md') {
       margin-top: 14rem;
