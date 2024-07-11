@@ -20,6 +20,10 @@
         @include grid-media-min('lg') {
             flex-direction: row;
         }
+
+        @include grid-media-min('2xl') {
+            min-height: 620px;
+        }
     }
 
     .su-hero__card {
@@ -61,17 +65,14 @@
     .su-hero__media {
         right: 0;
         width: fit-content;
-        min-height: 370px;
+        min-height: unset;
         position: relative;
         background: transparent;
+        aspect-ratio: 3/2;
 
-        @include grid-media-max('md') {
-            aspect-ratio: 11/11;
-        }
-
-        @include grid-media-min('lg') {
+        @include grid-media-min('2xl') {
+            min-height: 620px;
             position: absolute;
-            width: 50%;
         }
     }
 
