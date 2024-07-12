@@ -21,8 +21,16 @@
       width: calc(100% - 40px);
     }
 
-    @include grid-media-max('md') {
+    @include grid-media('md') {
       width: calc(100% - 100px);
+    }
+
+    @include grid-media-min('lg') {
+      width: calc(100% - 160px);
+    }
+
+    @include grid-media-min('xl') {
+      width: calc(100% - 200px);
     }
   }
 
