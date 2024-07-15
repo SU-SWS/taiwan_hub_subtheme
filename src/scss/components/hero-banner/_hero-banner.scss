@@ -251,8 +251,8 @@ main .su-alert {
       font-size: 2rem;
       font-weight: $su-font-regular;
 
-      @include grid-media-min('md') {
-        font-size: 2.4rem;
+      @include grid-media-max('md') {
+        font-size: 1.8rem;
       }
 
       a {

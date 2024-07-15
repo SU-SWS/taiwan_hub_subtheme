@@ -1,11 +1,17 @@
 @charset "UTF-8";
 
+@include grid-media-min('xs') {
+  body {
+   font-size: 1.8rem
+  }
+}
+
 main {
   .su-wysiwyg-text {
     h2,
     h3 {
       @include thub-heading--badge;
-  
+
       width: fit-content;
     }
   }
