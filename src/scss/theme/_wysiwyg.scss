@@ -14,5 +14,13 @@ main {
 
       width: fit-content;
     }
+
+    h3,
+    h4,
+    h5 {
+      a.su-link--external {
+        font-weight: 500;
+      }
+    }
   }
 }

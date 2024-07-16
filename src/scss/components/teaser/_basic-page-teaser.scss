@@ -26,7 +26,7 @@
                 h2,
                 h3 {
                     a {
-                        @include thub-type-d;
+                        @include thub-type-c;
                         @include link-icon(arrow-right, 18px, right);
 
                         background: $thub-gradient-lagunita-to-ochre;

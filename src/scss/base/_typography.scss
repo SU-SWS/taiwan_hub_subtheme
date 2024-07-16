@@ -20,3 +20,26 @@ h4 {
 h5 {
   @include thub-type-f;
 }
+
+// Overide for Stanford Basic's
+// headings with a link.
+[class^="su-type"],
+h1,
+h2,
+h3,
+h4,
+h5 {
+  a {
+    font-weight: 500;
+  }
+}
+
+a.su-link--external {
+  text-decoration: none;
+
+  &:hover,
+  &:active,
+  &:focus {
+    text-decoration: underline;
+  }
+}
