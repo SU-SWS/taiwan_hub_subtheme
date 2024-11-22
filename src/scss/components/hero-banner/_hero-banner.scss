@@ -161,7 +161,7 @@ main .su-alert {
     margin: 0;
   }
 
-  section.su-card__contents {
+  .su-card__contents {
     @include responsive-spacing('padding-top', 8);
 
     margin: 0 auto;
