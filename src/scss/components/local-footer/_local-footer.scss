@@ -10,7 +10,9 @@
     max-width: none;
   }
 
-  .thub-gradient-divider {
+  &:before {
+    display: block;
+    content: '';
     width: calc(100% - 200px);
     margin: 0 auto;
     background: $thub-gradient-lagunita-to-ochre-to-red;
